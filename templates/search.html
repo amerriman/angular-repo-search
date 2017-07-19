@@ -1,0 +1,11 @@
+<h2>Search GitHub Repositories</h2>
+<div class="message-section" ng-show="error">
+  <p class="alert alert-danger" role="alert" id="message">{{message}}</p>
+</div>
+<form class="form-inline">
+  <div class="form-group form-inline">
+    <label>Search Term:</label>
+    <input type="text" class="form-control" id="search-term" ng-model="term">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="findRepos(term)">Submit</button>
+</form>

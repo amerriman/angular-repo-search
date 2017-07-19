@@ -1,1 +1,5 @@
-var app = angular.module('githubSearch', []);
+var app = angular.module('githubSearch', [])
+  .controller('mainCtrl',['$scope', function($scope ){
+    
+  }]);
+
