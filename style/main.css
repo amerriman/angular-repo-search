@@ -1,0 +1,25 @@
+body {
+  margin: 20px;
+  font: 14px 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+}
+
+.search {
+  text-align: center;
+}
+
+.results {
+  margin-top: 40px;
+}
+
+caption {
+  font-size: 26px;
+}
+
+/*below 590px, eliminate description and image*/
+@media only screen and (max-width: 590px){
+
+  .hide-sm{
+    display: none;
+  }
+}

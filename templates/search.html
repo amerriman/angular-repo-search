@@ -1,11 +1,47 @@
-<h2>Search GitHub Repositories</h2>
-<div class="message-section" ng-show="error">
-  <p class="alert alert-danger" role="alert" id="message">{{message}}</p>
-</div>
-<form class="form-inline">
-  <div class="form-group form-inline">
-    <label>Search Term:</label>
-    <input type="text" class="form-control" id="search-term" ng-model="term">
+<section class="search">
+  <h2>Search GitHub Repositories</h2>
+  <div class="message-section" ng-show="$ctrl.error">
+    <p class="alert alert-danger" role="alert" id="message" ng-bind="$ctrl.message"></p>
   </div>
-  <button type="submit" class="btn btn-default" ng-click="findRepos(term)">Submit</button>
-</form>
+  <form class="form-inline">
+    <div class="form-group form-inline">
+      <label>Search Term:</label>
+      <input type="text" class="form-control" id="search-term" ng-model="$ctrl.term">
+    </div>
+    <div class=" form-group">
+      <label class="btn-group-label">Sort by:</label>
+      <div class="btn-group">
+        <button type="button" ng-click="$ctrl.setSort('score')" ng-class="{active: $ctrl.sort == 'score'}" class="btn btn-default">Best Match</button>
+        <button type="button" ng-click="$ctrl.setSort('stars')" ng-class="{active: $ctrl.sort == 'stars'}" class="btn btn-default">Stars</button>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="$ctrl.findRepos($ctrl.term, $ctrl.sort)">Submit</button>
+  </form>
+</section>
+
+<section class="results">
+  <table class="table table-striped" ng-if="$ctrl.items.length > 0">
+    <caption>Results for: {{$ctrl.searchTerm}}</caption>
+    <thead>
+    <tr>
+      <th class="hide-sm"></th>
+      <th>Owner</th>
+      <th>Repository</th>
+      <th class="hide-sm">Description</th>
+      <th>Language</th>
+      <th>Stars</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in $ctrl.items track by $index">
+      <td class="hide-sm"><img ng-src="{{item.owner.avatar_url}}" height="40px"></td>
+      <td ng-bind="item.owner.login"></td>
+      <td ng-bind="item.name"></td>
+      <td class="hide-sm" ng-bind="item.description"></td>
+      <td ng-bind="item.language"></td>
+      <td ng-bind="item.stargazers_count"></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
