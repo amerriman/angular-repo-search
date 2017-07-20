@@ -2,7 +2,6 @@ app.service('searchApi', ['$http', '$log', function($http, $log){
 
   var GHApi = {
     get: function(params){
-      console.log(params, "Params in the get")
       return $http.get('https://api.github.com/search/repositories?q=' + params.term + '&sort=' + params.sort).then(function(response){
         return response.data.items;
       }).catch(function(err){

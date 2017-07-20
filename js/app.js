@@ -31,7 +31,6 @@ var app = angular.module('githubSearch', [])
 
       searchApi.get(params).then(function(resp){
         vm.items = resp;
-        console.log(vm.items, "zees are the items")
       });
       vm.term = null;
     }
