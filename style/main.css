@@ -1,20 +1,108 @@
 body {
+  color: #797979;
+  background: #F5F4F0;
   margin: 20px;
   font: 14px 'Roboto Condensed', sans-serif;
   font-weight: 300;
 }
 
+/*search*/
+
 .search {
   text-align: center;
 }
+
+.form-group {
+  margin-left: 5px;
+}
+
+.section-header{
+  margin-bottom: 30px;
+}
+
+.submit-btn {
+  margin-left: 5px;
+}
+
+.btn-blue {
+  color: #797979;
+  /*background-color: #68dff0;*/
+  background-color: #ffffff;
+  border-color: #6faadf;
+}
+
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active {
+  color: #fff;
+  background-color: #6faadf;
+  border-color: #6faadf;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #78ceab;
+  border-color: #46ad83;
+}
+
+.btn-green:hover,
+.btn-green:focus,
+.btn-green:active,
+.btn-green.active {
+  color: #797979;
+  background-color: #46ad83;
+  border-color: #2aa573;
+}
+
+.message-section {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* end search*/
+
+/*results*/
 
 .results {
   margin-top: 40px;
 }
 
-caption {
-  font-size: 26px;
+.content-panel {
+  background: #ffffff;
+  box-shadow: 0px 3px 2px #aab2bd;
+  padding: 15px;
 }
+
+.content-panel h4 {
+  margin-left: 10px;
+}
+
+/*end results*/
+
+/*no results*/
+
+.no-results{
+  width:100%;
+}
+
+.no-results > img {
+  display: block;
+  position: relative;
+  top: -20px;
+  margin: 0 auto;
+  height: 350px;
+  width: auto;
+}
+
+.no-results > h3 {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  z-index: 2;
+}
+
+/*end no results*/
 
 /*below 590px, eliminate description and image*/
 @media only screen and (max-width: 590px){
